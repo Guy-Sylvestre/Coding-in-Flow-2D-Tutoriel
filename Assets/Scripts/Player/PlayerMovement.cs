@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // Declaration des attributs et class de unity native
     private Rigidbody2D rb;
     private BoxCollider2D coll;
     private Animator anim;
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        // Initiailisation des composants 
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
@@ -40,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateAnimationState()
     {
+        // Systeme d'animation du personnage
+        // Systeme de Flip sur X lorsque la direction horizontal est soit positive ou negative
         MovementState state;
         if (dirX > 0f)
         {
@@ -71,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
+        // Syteme de verification du joueur au sol ou pas
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 }
