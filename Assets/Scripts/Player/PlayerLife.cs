@@ -31,10 +31,9 @@ public class PlayerLife : MonoBehaviour
     private void Die()
     {
         // Systeme d'animation de mort du personnage
-        
+        deathSoundEffect.Play();
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
-        deathSoundEffect.Play();
     }
 
     private void RestartLevel()
