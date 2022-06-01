@@ -8,6 +8,7 @@ public class PlayerLife : MonoBehaviour
     // Declaration des attributs et class de unity native
     private Animator anim;
     private Rigidbody2D rb;
+    [SerializeField] private AudioSource deathSoundEffect;
 
 
     void Start()
@@ -16,6 +17,7 @@ public class PlayerLife : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
+
 
     private void OnCollisionEnter2D (Collision2D collision)
     {
@@ -29,8 +31,10 @@ public class PlayerLife : MonoBehaviour
     private void Die()
     {
         // Systeme d'animation de mort du personnage
+        
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
+        deathSoundEffect.Play();
     }
 
     private void RestartLevel()
