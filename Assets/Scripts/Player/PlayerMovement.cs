@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D coll;
     private Animator anim;
     private SpriteRenderer sprite;
+    
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private AudioSource jumSoundEffect;
     

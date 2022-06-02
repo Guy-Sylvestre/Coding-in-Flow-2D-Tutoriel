@@ -7,6 +7,7 @@ public class ItemCollector : MonoBehaviour
 {
     // Declaration des attributs et class de unity native
     private int cherries = 0;
+    
     [SerializeField] private Text cherriesText;
     [SerializeField] private AudioSource collectSoundEffect;
 

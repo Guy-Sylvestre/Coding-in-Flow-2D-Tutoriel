@@ -8,6 +8,7 @@ public class PlayerLife : MonoBehaviour
     // Declaration des attributs et class de unity native
     private Animator anim;
     private Rigidbody2D rb;
+    
     [SerializeField] private AudioSource deathSoundEffect;
 
 

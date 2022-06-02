@@ -7,6 +7,7 @@ public class WaypointFollower : MonoBehaviour
     // Declaration des attributs et class de unity native
     [SerializeField] private GameObject[] waypoints;
     [SerializeField] private float speed = 2f;
+    
     private int currentWaypointIndex = 0;
 
     void Update()
