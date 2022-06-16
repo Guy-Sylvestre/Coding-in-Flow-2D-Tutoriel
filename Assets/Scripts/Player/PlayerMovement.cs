@@ -31,15 +31,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        dirX = Input.GetAxis("Horizontal");
+        dirX = SimpleInput.GetAxis("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
-            jumSoundEffect.Play();
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        }
-
+        // Animation player
         UpdateAnimationState();
     }
 
@@ -80,5 +75,14 @@ public class PlayerMovement : MonoBehaviour
     {
         // Syteme de verification du joueur au sol ou pas
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+    }
+
+    public void JumpingPlayer()
+    {
+        if (IsGrounded())
+        {
+            jumSoundEffect.Play();
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
     }
 }

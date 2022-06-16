@@ -9,6 +9,6 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         // Systeme de deplacement de la camera par rapport au deplacement du joueur
-        transform.position = new Vector3(player.position.x + 2, player.position.y + 2, transform.position.z);
+        transform.position = new Vector3(player.position.x + 2, player.position.y + 1, transform.position.z);
     }
 }
